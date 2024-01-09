@@ -14,11 +14,11 @@ def tiempo():
 x = threading.Thread(target=tiempo, daemon=True)
 '''Si esta comentado: Se detiene al presionar una tecla
 Si se setea False: No importan las entradas'''
-# x.setDaemon(False)
+x.setDaemon(False)
 x.start()
 
 print('Desea salir? [Y/n]')
 entrada = msvcrt.getch()
-if entrada:
+if entrada and not x.isDaemon():
     print('PUES NO PUEDES 😈')
 print()
