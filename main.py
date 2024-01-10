@@ -1,4 +1,4 @@
-import threading, time, msvcrt
+import threading, time, msvcrt, winsound
 
 def tiempo():
     contador = 10
@@ -10,6 +10,7 @@ def tiempo():
         print(contador, 'Segundos restantes')
     print()
     print(mensaje.upper())
+    winsound.Beep(1500, 1000)
 
 x = threading.Thread(target=tiempo, daemon=True)
 '''Si esta comentado: Se detiene al presionar una tecla
